@@ -8,3 +8,17 @@ uuid = { version = "1.17.0", features = ["v4"] }
 serde = { version = "1.0.219", features = ["derive"] }
 serde_json = "1.0.140"
 clap = { version = "4.5.41", features = ["derive"] }
+warp = "0.3"          # for the web server
+tokio = { version = "1", features = ["macros","rt-multi-thread"] }
+
+[lib]
+name = "tasks_lib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "tasks-cli"
+path = "src/bin/cli.rs"
+
+[[bin]]
+name = "tasks-server"
+path = "src/bin/server.rs"
